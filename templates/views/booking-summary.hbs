@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Summary</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+    
+    :root {
+      --primary-color: #FF5733;
+      --primary-color-dark: #435681;
+      --text-dark: #333333;
+      --text-light: #767268;
+      --extra-light: #f3f4f6;
+      --white: #ffffff;
+      --max-width: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: flex;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+
+    .section__container {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .text__container {
+      width: 45%;
+    }
+
+    .text__content {
+      font-size: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    label {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      width: 40%; /* Adjust label width */
+    }
+
+    input[type="text"] {
+      flex: 1; /* Take remaining space */
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+
+    .become-partner-button {
+      display: block;
+      padding: 0.75rem 1.5rem;
+      background-color: #FF5733;
+      color: white;
+      border: none;
+      border-radius: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .become-partner-button:hover {
+      background-color: #435681;
+    }
+
+    .header__image__container {
+      min-height: 500px;
+      width: 45%;
+      background-image: url("assets/bookings.jpg");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 2rem;
+    }
+    .text__content h1 {
+  margin-bottom: 2rem; /* Increase the margin-bottom to desired value */
+  color:#FF5733;
+}
+
+    </style>
+</head>
+<body>
+  
+  <header class="section__container header__container">
+  <div class="text__container">
+    <div class="text__content">
+      <form action="/checkout" method="POST">
+        <h1>Booking Summary</h1>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" value="{{orderSummary.location}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="checkInDate">Check-in Date:</label>
+          <input type="text" id="checkInDate" name="checkInDate" value="{{orderSummary.checkInDate}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="checkOutDate">Check-out Date:</label>
+          <input type="text" id="checkOutDate" name="checkOutDate" value="{{orderSummary.checkOutDate}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="luggageItems">Luggage Items:</label>
+          <input type="text" id="luggageItems" name="luggageItems" value="{{orderSummary.luggageItems}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="numberOfDays">Number of Days:</label>
+          <input type="text" id="numberOfDays" name="numberOfDays" value="{{numberOfDays}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="totalPrice">Total Price:</label>
+          <input type="text" id="totalPrice" name="totalPrice" value="{{totalPrice}}" readonly>
+        </div>
+        <button type="submit" class="become-partner-button" onclick="confirmBooking()">click to proceed!</button>
+      </form>
+    </div>
+  </div>
+  <div class="header__image__container"></div>
+</header>
+<script>
+  function confirmBooking() {
+    if (confirm("Are you sure you want to proceed with the booking?")) {
+    }
+  }
+</script>
+
+</body> 
+</html>

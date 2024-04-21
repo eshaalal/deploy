@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" >
+    <title>SummerSafe</title>
+    <style>
+    /* CSS for the sliding form */
+    .partner-form {
+      position: fixed;
+      top: 0;
+      right: -100%; /* Start off hidden */
+      height: 100%;
+      width: 400px; /* Adjust width as needed */
+      background-color: #fff;
+      transition: right 0.3s ease-in-out;
+      padding: 20px;
+      z-index: 1000; /* Ensure it's above other content */
+    }
+    .partner-form.show {
+      right: 0; /* Slide in from the right */
+    }
+    .partner-form h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #FF5733;
+    }
+    .partner-form label {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .partner-form input,
+    .partner-form select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .partner-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #FF5733;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    .partner-form button:hover {
+      background-color: #435681;
+    }
+    .close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+  </style>
+   
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">SummerSafe</div>
+      <ul class="nav__links">
+  <li class="link"><a href="/">Home</a></li>
+  <li class="link"><a href="/partner">Become a partner</a></li>
+  <li class="link"><a href="/login">Login</a></li>
+  <li class="link"><a href="/contact">Contact Us</a></li>
+
+      </ul>
+    </nav>
+    <header class="section__container header__container">
+      <div class="text__container">
+        <div class="text__content">
+          <h1>Earn money easily</h1>
+          <p>Life is not all about parcels! How about storing luggage to increase your income effortlessly?</p>
+        <button class="become-partner-button" id="open-form">Become a Partner</button>
+        </div>
+      </div>
+      <div class="head__image__container"></div>
+    </header>
+    <div class="partner-form" id="partner-form">
+    <h2>Become a Partner</h2>
+      <span class="close-icon" id="close-form">&times;</span>
+
+    <form>
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required><br><br>
+        
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required><br><br>
+        
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br><br>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br><br>
+        
+        <label for="state">State:</label>
+        <select id="state" name="state" required>
+    <option value="" disabled selected>Choose..</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+    <option value="Assam">Assam</option>
+    <option value="Bihar">Bihar</option>
+    <option value="Chhattisgarh">Chhattisgarh</option>
+    <option value="Goa">Goa</option>
+    <option value="Gujarat">Gujarat</option>
+    <option value="Haryana">Haryana</option>
+    <option value="Himachal Pradesh">Himachal Pradesh</option>
+    <option value="Jharkhand">Jharkhand</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="Kerala">Kerala</option>
+    <option value="Madhya Pradesh">Madhya Pradesh</option>
+    <option value="Maharashtra">Maharashtra</option>
+    <option value="Manipur">Manipur</option>
+    <option value="Meghalaya">Meghalaya</option>
+    <option value="Mizoram">Mizoram</option>
+    <option value="Nagaland">Nagaland</option>
+    <option value="Odisha">Odisha</option>
+    <option value="Punjab">Punjab</option>
+    <option value="Rajasthan">Rajasthan</option>
+    <option value="Sikkim">Sikkim</option>
+    <option value="Tamil Nadu">Tamil Nadu</option>
+    <option value="Telangana">Telangana</option>
+    <option value="Tripura">Tripura</option>
+    <option value="Uttar Pradesh">Uttar Pradesh</option>
+    <option value="Uttarakhand">Uttarakhand</option>
+    <option value="West Bengal">West Bengal</option>
+    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+    <option value="Chandigarh">Chandigarh</option>
+    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Lakshadweep">Lakshadweep</option>
+    <option value="Puducherry">Puducherry</option>
+</select><br><br>
+
+        
+        <label for="storage-capacity">Storage Capacity:</label>
+        <input type="text" id="storage-capacity" name="storage-capacity" required><br><br>
+        
+        <button type="submit">Be a SummerSafer!</button>
+    </form>
+  </div>
+    <section class="about" id="about">
+      <div class="section__container about__container">
+        <div class="about__grid">
+          <div class="about__image">
+            <img src="assets/girl1.png" alt="about" />
+          </div>
+          <div class="about__card">
+            <span><i class="ri-money-dollar-circle-line"></i></span>
+            <h4>Make extra money</h4>
+            <p>
+              Store luggage and get your income directly on your bank account at the end of the month.            </p>
+          </div>
+          <div class="about__image">
+            <img src="assets/girl2.png" alt="about" />
+          </div>
+          <div class="about__card">
+            <span><i class="ri-user-line"></i></span>
+            <h4>Attract more customers</h4>
+            <p>Let the whole world know about your business for free</p>
+          </div>
+        </div>
+        <div class="about__content">
+          <h2 class="section__header">Storing luggage with SummerSafe is worth it! 💸
+            You have nothing to pay, all to profit!</h2>    
+        </div>
+      </div>
+    </section>
+  <script>
+    // JavaScript to handle the sliding effect and closing the form
+document.getElementById('open-form').addEventListener('click', function() {
+  document.getElementById('partner-form').classList.toggle('show');
+});
+
+document.getElementById('close-form').addEventListener('click', function() {
+  document.getElementById('partner-form').classList.remove('show');
+});
+
+  </script>
+    
+    
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3>SummerSafe</h3>
+          <p>
+            SummerSafe is a luggage-storage booking website that offers a seamless and
+            convenient way to find and book storage all across india.
+          </p>
+          <p>
+            With a user-friendly interface and a vast selection of universities,
+            SummerSafe aims to provide a stress-free experience for students
+            while they enjoy their vacation.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <p>About Us</p>
+          <p>Our Team</p>
+          <p>Blog</p>
+          <p>Book</p>
+          <p>Contact Us</p>
+        </div>
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <p>FAQs</p>
+          <p>Terms & Conditions</p>
+          <p>Privacy Policy</p>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <p>Social Media</p>
+          <p>Help Center</p>
+          <p>Partnerships</p>
+        </div>
+      </div>
+      
+    </footer>
+    
+  </body>
+</html>
